@@ -16,9 +16,9 @@ workflows:
   build-n-deploy:
     jobs:
       - build:
-          filters:
-            tags:
-              ignore: /.*/
+          branches:
+            only:
+              - release
       - test
 
 
