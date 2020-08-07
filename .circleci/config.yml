@@ -1,24 +1,21 @@
-version: 2.1
-
 jobs:
+  build:
+    docker:
+      - image: circleci/node:12.0
+    steps:
+      - checkout
+      - run: echo 'build successfully'
   test:
     docker:
       - image: circleci/node:12.0
     steps:
       - checkout
       - run: npm install
-  build:
-    docker:
-      - image: circleci/node:12.0
-    steps:
-      - checkout
-      - run: echo "build successful! "
-
 workflows:
-  version: 2.1
-    build_and_test:
-      jobs:
-        - build
-        - test
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
 
 
