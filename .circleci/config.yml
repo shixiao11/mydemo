@@ -18,7 +18,7 @@ workflows:
       - build:
           filters:
             tags:
-              only: /2.*/
+              ignore: /.*/
       - test
 
 
