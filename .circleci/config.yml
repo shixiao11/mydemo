@@ -16,10 +16,11 @@ jobs:
 
 workflows:
   version: 2.1
-    filters:
-      branches:
-        only:
-          - master
     jobs:
-      - test
+      - test:
+        filters:
+          branches:
+            only:
+              - master
+
 
