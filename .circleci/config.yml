@@ -1,12 +1,14 @@
 version: 2.1
-jobs:
-  tests:
-    working_directory: ~/repo
-    docker:
-      - image: circleci/node:12.16
-    steps:
-      - checkout
-      - run:
-          name: Update NPM
-          command: sudo npm install -g npm@latest
+workflows:
+  jobs:
+    tests:
+      working_directory: ~/repo
+      docker:
+        - image: circleci/node:12.16
+      steps:
+        - checkout
+        - run:
+            name: Update NPM
+            command: sudo npm install -g npm@latest
+
 
