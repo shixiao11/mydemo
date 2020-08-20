@@ -9,7 +9,7 @@ jobs:
       - run: npm install
       - run: npm test
       - store_artifacts:
-          path: test_result
+          path: coverage
   build:
     docker:
       - image: circleci/node:12.0
