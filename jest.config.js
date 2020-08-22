@@ -4,8 +4,8 @@ module.exports={
     ['jest-junit',
         {
             pageTitle: 'Test Report',
-            outputDirectory:'~/repo/test_result/',
-            outputName: 'report',
+            outputDirectory:'./test_result/',
+            outputName: 'report.xml',
         },
     ],
 ],

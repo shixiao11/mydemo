@@ -9,6 +9,9 @@ jobs:
       - run: npm run test-coverage
       - store_artifacts:
           path: coverage
+      - store_test_results:
+          path: ./test-results
+
   build:
     docker:
       - image: circleci/node:12.0
