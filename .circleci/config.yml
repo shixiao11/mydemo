@@ -5,13 +5,7 @@ jobs:
       - image: circleci/node:12.0
     steps:
       - checkout
-      - run: DIR= './workspace'
-        if [ -d "$DIR" ]; then
-        echo "${DIR} exists"
-        fi
-        else
-        mkdir ./workspace
-        fi
+      - run: mkdir -p ./workspace
       - run: npm install
       - run: npm run test-coverage
       - run: npm test
