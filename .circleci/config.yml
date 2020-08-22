@@ -26,14 +26,14 @@ jobs:
       - checkout
       - run: echo 'build successfully'
       - attach_workspace:
-          at: ./workspace
-      - run: cd ./workspace
+          at: ~/main/test-results
+      - run: cd ~/main/test-results
       - run: ls
 workflows:
   version: 2
   build_and_test:
-    jobs:
-      - build
-      - test
+    - build:
+      requires:
+        - tests
 
 
