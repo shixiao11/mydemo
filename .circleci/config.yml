@@ -3,6 +3,7 @@ jobs:
   test:
     docker:
       - image: circleci/node:12.0
+    working_directory: ~/main
     steps:
       - checkout
       - run: mkdir -p ./workspace
@@ -13,10 +14,10 @@ jobs:
           path: coverage
       - store_test_results:
           path: ./test-results
-      - persist_to_workspace:
-          root: ./test-results
-          paths:
-            - /report.xml
+#      - persist_to_workspace:
+#          root: ./test-results
+#          paths:
+#            - /report.xml
 
   build:
     docker:
