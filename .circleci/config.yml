@@ -7,7 +7,6 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run test-coverage
-      - run: mkdir ./test-results
       - run: npm test
       - store_artifacts:
           path: coverage
