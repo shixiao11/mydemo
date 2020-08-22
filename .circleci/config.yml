@@ -12,7 +12,7 @@ jobs:
       - store_artifacts:
           path: coverage
       - store_test_results:
-          path: test-results
+          path: ./test-results
 
   build:
     docker:
