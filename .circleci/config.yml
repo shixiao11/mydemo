@@ -31,11 +31,10 @@ jobs:
       - run: ls
 workflows:
   version: 2
-  test and build:
-    - build:
-        type: approval
-        requires:
-          - test
-
+  build_and_test:
+    jobs:
+      - build:
+          requires:
+              - test
 
 
