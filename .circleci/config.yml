@@ -1,3 +1,4 @@
+cache-key: &cache-key dependency-cache-{{ checksum "package.json" }}
 version: 2
 jobs:
   test:
@@ -8,6 +9,13 @@ jobs:
       - checkout
       - run: mkdir -p ./workspace
       - run: npm install
+      - restore_cache:
+          keys:
+            - *cache-key
+      - save_cache:
+          key: *cache-key
+          paths:
+            - ./node_modules
       - run: npm run test-coverage
       - run: npm test
       - store_artifacts:
