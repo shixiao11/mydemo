@@ -14,7 +14,7 @@ jobs:
       - store_test_results:
           path: ./test-results
       - persist_to_workspace:
-          root: ./workspace
+          root: /
           paths:
             - ./test-results/report.xml
 
