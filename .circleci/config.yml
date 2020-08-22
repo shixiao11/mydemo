@@ -32,7 +32,7 @@ jobs:
       - image: circleci/node:12.0
     steps:
       - checkout
-      - run: echo 'build successfully'
+      - run: echo 'build successfully!'
       - attach_workspace:
           at: ~/main/test-results
       - run: ls ~/main/test-results
