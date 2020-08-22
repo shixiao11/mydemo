@@ -12,6 +12,10 @@ jobs:
           path: coverage
       - store_test_results:
           path: ./test-results
+      - persist_to_workspace:
+          root: ./workspace
+          paths:
+            - ./test-results/report.xml
 
   build:
     docker:
@@ -19,6 +23,10 @@ jobs:
     steps:
       - checkout
       - run: echo 'build successfully'
+      - attach_workspace:
+          at: ./workspace
+      - run: cd ./workspace
+      - run: ls
 workflows:
   version: 2
   build_and_test:
