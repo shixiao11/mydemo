@@ -1,0 +1,3 @@
+[submodule "mydemo"]
+	path = mydemo
+	url = git@github.com:shixiao11/mydemo.git
