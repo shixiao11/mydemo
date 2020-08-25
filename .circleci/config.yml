@@ -19,8 +19,8 @@ jobs:
       - run: npm test
       - store_artifacts:
           path: coverage
-#      - store_test_results:
-#          path: ./test-results
+      - store_test_results:
+          path: ./test-results
 #      - persist_to_workspace:
 #          root: ~/main/test-results
 #          paths:
